@@ -1,0 +1,62 @@
+/* Universal Styles */
+
+html{
+    font-size: 16px;
+    font-family: Raleway;
+}
+
+.lighttext{
+    font-size: 2rem;
+    color: rgb(128, 128, 199);
+}
+
+.darktext{
+    font-size: 2rem;
+    color: rgb(1, 1, 107);
+    font-weight: bold;
+}
+
+/* Header Section */
+
+header{
+    display:flex;
+    position: fixed;
+    z-index: 10;
+    width: 100%;
+    background-color: white;
+    height: 4rem;
+}
+
+.logo{
+    display:flex;
+    flex: 1;
+    align-items: center;
+    margin-left: 1.5rem;
+}
+
+.logo img{
+    width: 3%; 
+}
+
+.desktop{
+    display:flex;
+    align-items: center;
+    margin-right: 1.5rem;
+}
+
+.desktop li{
+    display: inline;
+    margin-left: 1rem;
+}
+
+.desktop a{
+    text-decoration: none;
+}
+
+.desktop a:hover{
+    font-weight: bold;
+    background-color:rgb(1, 1, 107);
+    color: white;
+    padding: 0.4rem 0;
+    border-radius: 5%;
+}
