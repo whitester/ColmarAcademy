@@ -35,7 +35,7 @@ header{
 }
 
 .logo img{
-    width: 3%; 
+    width: 2.5em; 
 }
 
 .desktop{
@@ -59,4 +59,40 @@ header{
     color: white;
     padding: 0.4rem 0;
     border-radius: 5%;
+    transition: background-color 500ms ease-in;
+}
+
+.mobile{
+    display: none;
+}
+
+/* Header Section Mobile */
+
+@media only screen and (max-width: 760px) {
+    .logo .lighttext, .logo .darktext{
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 460px) {
+    .desktop ul{
+        display: none;
+    }
+    .logo{
+        display: none;
+    }
+    .mobile{
+        display:flex;
+        flex: 1;
+        align-items: center;
+        margin-right: 1.5rem;
+    }
+    .mobile ul{
+        display: flex;
+        flex: 1;
+        justify-content: space-between;
+    }
+    .mobile li img{
+        width: 2.5rem;
+    }
 }
