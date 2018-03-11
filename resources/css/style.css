@@ -1,22 +1,36 @@
-/* Universal Styles */
+/* This website has been developed and tested on a
+   wide-screen monitor - resolution 1920 x 1080 */
+
+/* Universal Styling */
 
 html{
     font-size: 16px;
-    font-family: Raleway;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-.lighttext{
+.lighttext, .darktext {
     font-size: 2rem;
-    color: rgb(128, 128, 199);
+    font-family: Arial, Helvetica, sans-serif;
+}
+.lighttext{
+    color: #75323F;
 }
 
 .darktext{
-    font-size: 2rem;
-    color: rgb(1, 1, 107);
+    color: #565656;
     font-weight: bold;
 }
 
-/* Header Section */
+h1{
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+h2{
+    font-size: 2rem;
+}
+
+/* Header Section Styling */
 
 header{
     display:flex;
@@ -55,10 +69,11 @@ header{
 
 .desktop a:hover{
     font-weight: bold;
-    background-color:rgb(1, 1, 107);
+    background-color:#01016B;
     color: white;
     padding: 0.4rem 0;
     border-radius: 5%;
+    opacity: 0.8;
     transition: background-color 500ms ease-in;
 }
 
@@ -66,7 +81,7 @@ header{
     display: none;
 }
 
-/* Header Section Mobile */
+/* Header Section Tablet and Mobile Styling */
 
 @media only screen and (max-width: 760px) {
     .logo .lighttext, .logo .darktext{
@@ -95,4 +110,77 @@ header{
     .mobile li img{
         width: 2.5rem;
     }
+}
+
+/* Banner Section Styling */
+
+.banner{
+    display: flex;
+    position: relative;
+    top: 4rem;
+    background-color: #D5D5D5;
+}
+
+.study{
+    width: 60%;
+    margin: 2rem 1.5rem;
+}
+
+.study img{
+    width: 100%;
+}
+
+.start{
+    margin: auto 0;
+    color: #383838;
+}
+
+.start .btn{
+    padding: 0.5rem;
+    margin-top: 2rem;
+    text-align: center;
+    background-color: #383838;
+    color: white;
+    font-size: 2rem;
+}
+
+.start .btn:hover{
+    opacity: 0.8;
+    background-color:#01016B;
+    transition: background-color 500ms ease-in;
+}
+
+/*Banner Section Tablet and Mobile Styling */
+
+@media only screen and (max-width: 760px) {
+h1{
+    font-size: 2rem;
+    font-weight: bold;
+    }
+h2, .start .btn{
+    font-size: 1.33rem;
+    }
+}
+
+@media only screen and (max-width: 460px) {
+    .banner{
+        flex-direction: column;
+    }
+    .study{
+        margin: 0;
+        width: 100%;
+    }
+    .start{
+        margin: 2rem 1rem;
+    }
+    .intro h2{
+        margin: 1.5rem 0 2rem 0; 
+    }
+    h1{
+        font-size: 3rem;
+        font-weight: bold;
+        }
+    h2, .start .btn{
+        font-size: 2rem;
+        }
 }
