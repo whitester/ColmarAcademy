@@ -1,12 +1,12 @@
-/* This website has been developed and tested on a
-   wide-screen monitor - resolution 1920 x 1080 */
+/* This website was built on a wide-screen monitor, resolution 1920 x 1080 px,
+   so I have re-used the 'site-container' concept intrduced in the 'Secret Agent'
+   wesbite to keep the content looking as similar as possible to the wireframe  */
 
 /* Universal Styling */
 
 html{
     font-size: 16px;
-    /* font-family: Arial, Helvetica, sans-serif; */
-    font-family: 'Roboto', cursive;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
 }
 
 .lighttext, .darktext {
@@ -22,12 +22,14 @@ html{
 }
 
 h1{
-    font-size: 2rem;
+    font-size: 2.2rem;
     font-weight: bold;
+    line-height: 2.2rem;
 }
 
 h2{
     font-size: 1.5rem;
+    line-height: 1.8rem;
 }
 
 h3{
@@ -65,7 +67,7 @@ header{
 }
 
 .logo img{
-    width: 2.5em; 
+    width: 2.5rem; 
 }
 
 .desktop{
@@ -85,7 +87,7 @@ header{
 
 .desktop a:hover{
     font-weight: bold;
-    background-color:#47B5F5;
+    background-color: #FA5D5D;
     color: white;
     padding: 0.4rem 0;
     border-radius: 5%;
@@ -144,6 +146,10 @@ header{
     background-color: #D5D5D5;
 }
 
+.banner h1{
+    padding-bottom: 1rem;
+}
+
 /* a banner and information image width of 55% plus 48px of padding
    works out to 60% of the image container in total.
 */
@@ -174,7 +180,7 @@ header{
 
 .start-here .btn:hover{
     opacity: 0.8;
-    background-color:#47B5F5;
+    background-color: #FA5D5D;
     transition: background-color 500ms ease-in;
 }
 
@@ -236,9 +242,10 @@ h2, .start-here .btn{
 .academy{
     display: flex;
     flex-wrap: wrap;
-    padding-top: 2rem;
+    margin: 2rem 0;
     width: 40%;
-    margin-bottom: 2rem;
+    text-align: left;
+    align-content: flex-start;
 }
 
 .academy-img:first-child{
@@ -248,7 +255,7 @@ h2, .start-here .btn{
 
 .academy-img{
     width: 35%;
-    padding: 1rem;
+    padding: 1rem;  
 }
 
 .academy-img img{
@@ -280,10 +287,6 @@ h2, .start-here .btn{
 
 .academy-img-mobile{
     display:none;
-}
-
-.academy .academy-info:last-child{
-    background-color: #D5D5D5;
 }
 
 /* Information Section Tablet Styling */
@@ -326,7 +329,7 @@ h2, .start-here .btn{
         background-color: #F7F5F5;
     }
     .academy a{
-        /* should be 3REM but 1REM looks more like the redline brief IMO */ 
+        /* should be 3REM but 1REM looks more like the wireframe brief IMO */ 
         margin-bottom: 1rem; 
     }   
 }
@@ -340,7 +343,7 @@ h2, .start-here .btn{
     text-align: center;
 }
 
-.Courses h1{
+.Courses h1, .Thesis h1{
     padding: 2rem 0;
 }
 
@@ -414,5 +417,94 @@ h2, .start-here .btn{
     .course h3{
         margin: 0;
         padding: 1rem;
+    }
+}
+
+/* Thesis Section Styling */
+
+.Thesis{
+    position: relative;
+    background-color: #F7F5F5;
+    top: 2rem;
+    text-align: center;
+    padding-bottom: 2rem;
+}
+
+.urban-video{
+    width: 57%;
+    margin: 0 1.5rem 1.5rem 1.5rem;
+    text-align: left;
+}
+
+.urban-video video{
+    width: 100%;
+}
+
+.Thesis .academy{
+    margin-top:0 ;
+}
+
+.Thesis .academy-img:first-child{
+    padding: 1rem;
+}
+
+.urban-video h3{
+    padding: 1.5rem 0 0.5rem 0;
+}
+
+/* Thesis Section Tablet Styling */
+
+/* @media only screen and (max-width: 760px) {
+
+} */
+
+/* Thesis Section Mobile Styling */
+
+@media only screen and (max-width: 460px) {
+    .Thesis .academy, .urban-video h3, .urban-video h4  {
+        display: none;
+    }
+    .urban-video{
+        width: 100%;
+        margin: 0 0 1.5rem 0;
+    }
+}
+
+/* Footer Section Styling */
+
+footer{
+    position: relative;
+    background-color: #F7F5F5;
+    font-size: 0.75rem;
+}
+
+footer .site-container{
+    border-top: solid 1px #D5D5D5;
+    padding: 1rem 1.5rem;
+}
+
+.copyright{
+    flex:1;
+}
+
+.terms li{
+    display: inline;
+}
+
+.terms a{
+    text-decoration: none;
+}
+
+/* Footer Section Tablet Styling */
+
+/* @media only screen and (max-width: 760px) {
+
+} */
+
+/* Footer Section Mobile Styling */
+
+@media only screen and (max-width: 460px) {
+    .terms  {
+        display: none;
     }
 }
