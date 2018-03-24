@@ -1,24 +1,35 @@
 /* This website was built on a wide-screen monitor, resolution 1920 x 1080 px,
    so I have re-used the 'site-container' concept intrduced in the 'Secret Agent'
-   wesbite to keep the content looking as similar as possible to the wireframe  */
+   wesbite to keep the content looking as similar as possible to the wireframes */
 
 /* Universal Styling */
 
 html{
     font-size: 16px;
-    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    font-family: Roboto, Arial, Helvetica, sans-serif;
 }
 
-.lighttext, .darktext {
+/* decided to go for a single colour background for the body 
+   with a linear-gradient to avoid the horizontal section breaks */
+
+body{
+    background-image: linear-gradient(#EEF7FD, #D2ECFF);
+}
+
+.bluetext {
     font-size: 2rem;
-}
-.lighttext{
-    color: #a39f9f;
+    color:#043D6E;
+    font-weight: bold;
 }
 
-.darktext{
-    color: #0e0d0d;
+.redtext {
+    font-size: 2rem;
+    color:#FF3B3F;
     font-weight: bold;
+}
+
+.whitetext{
+    color: white;
 }
 
 h1{
@@ -49,6 +60,22 @@ h4{
     margin: 0 auto;
 }
 
+.bluebg{
+    background-color: #376FA0;
+}
+
+a{
+    text-decoration: none;
+    color: #FF3B3F;
+    font-weight: bold;
+}
+
+li{
+    display: inline;
+    padding-left: 1rem;
+}
+
+
 /* Header Section Styling */
 
 header{
@@ -76,23 +103,13 @@ header{
     margin-right: 1.5rem;
 }
 
-.desktop li{
-    display: inline;
-    margin-left: 1rem;
-}
-
-.desktop a{
-    text-decoration: none;
-}
-
 .desktop a:hover{
     font-weight: bold;
-    background-color: #FA5D5D;
+    background-color: #FF3B3F;
     color: white;
     padding: 0.4rem 0;
     border-radius: 5%;
-    opacity: 0.8;
-    transition: background-color 500ms ease-in;
+    transition: background-color 200ms ease-in;
 }
 
 .mobile{
@@ -102,14 +119,17 @@ header{
 /* Header Section Tablet Styling */
 
 @media only screen and (max-width: 760px) {
-    .logo .lighttext, .logo .darktext{
+    .logo span{
         display: none;
+    }
+    a{
+        font-size: 0.95rem;
     }
 }
 
-/* Header Section  Mobile Styling */
+/* Header Section Mobile Styling */
 
-@media only screen and (max-width: 460px) {
+@media only screen and (max-width: 450px) {
     .desktop ul{
         display: none;
     }
@@ -136,28 +156,26 @@ header{
     }
 }
 
+
 /* Banner Section Styling */
 
 .banner{
-    display: flex;
     position: relative;
     top: 4rem;
     margin-bottom: 2rem;
-    background-color: #D5D5D5;
 }
 
-.banner h1{
+.intro h1{
     padding-bottom: 1rem;
 }
 
-/* a banner and information image width of 55% plus 48px of padding
+/* banner and information image width of 55% plus 48px of padding
    works out to 60% of the image container in total.
 */
 
 .study{
     width: 55%;
     padding: 2rem 1.5rem;
-    border-right: solid 1px #D5D5D5;
 }
 
 .study img{
@@ -166,39 +184,39 @@ header{
 
 .start-here{
     margin: auto 0;
-    color: #383838;
 }
 
-.banner .btn{
+.start-here .btn{
     padding: 0.5rem;
     margin-top: 2rem;
     text-align: center;
-    background-color: #383838;
-    color: white;
     font-size: 2rem;
 }
 
 .start-here .btn:hover{
-    opacity: 0.8;
-    background-color: #FA5D5D;
-    transition: background-color 500ms ease-in;
+    background-color: #FF3B3F; 
+    transition: background-color 200ms ease-in;
 }
 
 /* Banner Section Tablet Styling */
 
 @media only screen and (max-width: 760px) {
-h1{
-    font-size: 2rem;
-    font-weight: bold;
+    .intro h1{
+        font-size: 1.6rem;
+        line-height: 1.6rem;
     }
-h2, .start-here .btn{
-    font-size: 1.33rem;
+    .intro h2{
+        font-size: 1.2rem;
+        line-height: 1.4rem;
+    }
+    .start-here .btn{
+        font-size: 1.2rem;
     }
 }
 
 /* Banner Section Mobile Styling */
 
-@media only screen and (max-width: 460px) {
+@media only screen and (max-width: 450px) {
     .banner .site-container{
         flex-direction: column;
     }
@@ -210,24 +228,27 @@ h2, .start-here .btn{
         width: 100%;
     }
     .intro h1{
-        font-size: 2.6rem;
+        font-size: 2.2rem;
         font-weight: bold;
+        line-height: 2.2rem;
         }
     .intro h2{
         margin: 1.5rem 0 2rem 0;
-        font-size: 1.8rem;
-    }
-    .banner .btn{
-        background-color: #999999; 
+        font-size: 1.5rem;
+        line-height: 1.8rem;
     }
 }
+
 
 /* Information Section Styling */
 
 .Information{
     position: relative;
     top: 2rem;
-    background-color: #F7F5F5;
+}
+
+.Information .study{
+    border-right: solid 1px #CDCDCD;
 }
 
 .study h1{
@@ -239,7 +260,7 @@ h2, .start-here .btn{
     line-height: 1.2rem;
 } 
 
-.academy{
+.info-section{
     display: flex;
     flex-wrap: wrap;
     margin: 2rem 0;
@@ -248,97 +269,95 @@ h2, .start-here .btn{
     align-content: flex-start;
 }
 
-.academy-img:first-child{
+.image:first-child{
     padding: 0 1rem 1rem 1rem;
-    border-bottom: solid 2px #D5D5D5;
 }
 
-.academy-img{
+.image{
     width: 35%;
     padding: 1rem;  
 }
 
-.academy-img img{
+.image img{
     width: 100%;
     height: auto;
 }
 
-.greybg{
-    background-color: #D5D5D5;
-}
-
-.academy-info{
+.info{
     display: flex;
     flex-direction: column;
     width: 56%;
     justify-content: center;
 }
 
-.academy .border{
-    border-bottom: solid 2px #D5D5D5;
+.info-section .border{
+    border-bottom: solid 2px #CDCDCD;
 }
 
-.academy a{
-    text-decoration: none;
-    color: #47B5F5;
-    font-weight: bold;
-    font-size: 0.75rem;
-}   
-
-.academy-img-mobile{
+.image-mobile{
     display:none;
 }
 
 /* Information Section Tablet Styling */
 
-/* @media only screen and (max-width: 760px) {
-
-} */
+@media only screen and (max-width: 760px) {
+    .study h1{
+        font-size: 2rem;
+        }
+    .study h4{
+        font-size: 0.7rem;
+    }
+    .info-section{
+        width: 70%;
+    }
+}
 
 /* Information Section Mobile Styling */
 
-@media only screen and (max-width: 460px) {
-    .Information .study, .academy-img {
+@media only screen and (max-width: 450px) {
+    .Information .study, .image {
         display: none;
     }
-    .academy{
-        padding: 0;
+    .info-section{
         width: 100%;
-        background-color: #F7F5F5;
+        margin:0;
     }
-    .academy .border{
+    .info-section .border{
         border-bottom: none;
     }
-    .academy-img:first-child{
+    .image:first-child{
         border-bottom: none;
         padding: 0;
     }
-    .academy-img-mobile {
+    .image-mobile {
         display: block;
         width: 100%;
         padding: 1rem;
     }
-    .academy-img-mobile img{
+    .image-mobile img{
         width: 100%;
     }
-    .academy-info {
+    .info {
         margin-left: 2rem;
         width: 100%;
     }
-    .academy .academy-info:last-child{
-        background-color: #F7F5F5;
+    .info-section .info:last-child{
+        background-color: unset;
+        color: black;
     }
-    .academy a{
-        /* should be 3REM but 1REM looks more like the wireframe brief IMO */ 
-        margin-bottom: 1rem; 
-    }   
+    .info-section a{
+        margin-bottom: 3rem; 
+    }
+    .info-section a:last-child{
+        margin-bottom: 2rem; 
+    }
 }
+
 
 /* Courses Section Styling */
 
 .Courses{
     position: relative;
-    background-color: #E8E8E8;
     top: 2rem;
     text-align: center;
 }
@@ -387,13 +406,21 @@ h2, .start-here .btn{
 
 /* Course Section Tablet Styling */
 
-/* @media only screen and (max-width: 760px) {
-
-} */
+@media only screen and (max-width: 760px) {
+    .Courses h1{
+        font-size: 2rem;
+        }
+    .Courses h3{
+        font-size: 1rem;
+    }
+    .Courses h4{
+        font-size: 0.72rem;
+    }
+}
 
 /* Course Section Mobile Styling */
 
-@media only screen and (max-width: 460px) {
+@media only screen and (max-width: 450px) {
     .course img, .course h4 {
         display:none;
     }
@@ -407,7 +434,7 @@ h2, .start-here .btn{
     }
     .course{
         width: 100%;
-        background-color: #D5D5D5;
+        background-color: #376FA0; 
     }
     .course:nth-child(1n+1)
     {
@@ -417,14 +444,15 @@ h2, .start-here .btn{
     .course h3{
         margin: 0;
         padding: 1rem;
+        color: white;
     }
 }
+
 
 /* Thesis Section Styling */
 
 .Thesis{
     position: relative;
-    background-color: #F7F5F5;
     top: 2rem;
     text-align: center;
     padding-bottom: 2rem;
@@ -440,11 +468,11 @@ h2, .start-here .btn{
     width: 100%;
 }
 
-.Thesis .academy{
-    margin-top:0 ;
+.Thesis .info-section{
+    margin-top:0;
 }
 
-.Thesis .academy-img:first-child{
+.Thesis .image:first-child{
     padding: 1rem;
 }
 
@@ -452,16 +480,10 @@ h2, .start-here .btn{
     padding: 1.5rem 0 0.5rem 0;
 }
 
-/* Thesis Section Tablet Styling */
-
-/* @media only screen and (max-width: 760px) {
-
-} */
-
 /* Thesis Section Mobile Styling */
 
-@media only screen and (max-width: 460px) {
-    .Thesis .academy, .urban-video h3, .urban-video h4  {
+@media only screen and (max-width: 450px) {
+    .Thesis .info-section, .urban-video h3, .urban-video h4  {
         display: none;
     }
     .urban-video{
@@ -470,16 +492,16 @@ h2, .start-here .btn{
     }
 }
 
+
 /* Footer Section Styling */
 
 footer{
     position: relative;
-    background-color: #F7F5F5;
     font-size: 0.75rem;
 }
 
 footer .site-container{
-    border-top: solid 1px #D5D5D5;
+    border-top: solid 1px #CDCDCD;
     padding: 1rem 1.5rem;
 }
 
@@ -487,23 +509,9 @@ footer .site-container{
     flex:1;
 }
 
-.terms li{
-    display: inline;
-}
-
-.terms a{
-    text-decoration: none;
-}
-
-/* Footer Section Tablet Styling */
-
-/* @media only screen and (max-width: 760px) {
-
-} */
-
 /* Footer Section Mobile Styling */
 
-@media only screen and (max-width: 460px) {
+@media only screen and (max-width: 450px) {
     .terms  {
         display: none;
     }
